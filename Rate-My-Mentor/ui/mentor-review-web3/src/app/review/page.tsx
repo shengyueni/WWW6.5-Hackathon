@@ -46,11 +46,11 @@ type DialogState = null | "confirm_mint" | "ai_extract_failed";
 type Phase = "input" | "extracting" | "review_ai_result" | "submitting" | "submitted";
 
 // 强制类型为 Phase 以解决严格的字面量类型检查
-const INPUT_PHASE: Phase = "input";
-const EXTRACTING_PHASE: Phase = "extracting";
-const SUBMITTING_PHASE: Phase = "submitting";
-const REVIEW_AI_RESULT_PHASE: Phase = "review_ai_result";
-const SUBMITTED_PHASE: Phase = "submitted";
+const INPUT_PHASE: Phase = "input" satisfies Phase;
+const EXTRACTING_PHASE: Phase = "extracting" satisfies Phase;
+const SUBMITTING_PHASE: Phase = "submitting" satisfies Phase;
+const REVIEW_AI_RESULT_PHASE: Phase = "review_ai_result" satisfies Phase;
+const SUBMITTED_PHASE: Phase = "submitted" satisfies Phase;
 
 const DIM_LABELS = ["成长支持", "预期清晰度", "沟通质量", "工作强度", "尊重与包容"] as const;
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:3001/api/v1";
